@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\V2;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
 {
-//    public static $wrap = 'hassan';
     /**
      * Transform the resource into an array.
      *
@@ -15,12 +14,11 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
-//        return parent::toArray($request);
         return [
-          'id' => $this->id,
-          'title' => strtoupper($this->title),
-          'content' => $this->content,
-          'created_at' => $this->created_at/*->format('Y-m-d H:i:m')*/,
+            'id' => $this->id,
+            'name' => strtoupper($this->title),
+            'body' => $this->content,
+            'created_at' => $this->created_at/*->format('Y-m-d H:i:m')*/,
         ];
     }
 }
